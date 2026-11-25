@@ -11,10 +11,11 @@
 
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
-|   1 | Cao Duy Minh | | | `workcaominh-gif` | Người viết code (CP1) |
+|   1 | Cao Duy Minh | 2A202603988 | | `workcaominh-gif` | Người viết code (CP1) |
 |   2 | Hoàng Nhật Minh | 2A202603992 | | | Người viết code sau giải lao (CP4) |
 |   3 | Nguyễn Khắc Bào | 2A202604072 | baonk.invzble.z@gmail.com | `invzble zone` | Người gắn nhãn 1 (CP3) |
-|   4 | | | | | Người gắn nhãn 2, kiêm giữ hồ sơ |
+|   4 | Vũ Văn Trường | 2A202603910 | tini.vu.0@gmail.com | `Sz3RO` | Người kiểm số (CP2), Người gắn nhãn 2 (CP3) |
+|   5 | Hoàng Thế Duyệt | 2A202603980 | | `theduythg` | Người giữ hồ sơ & tổng hợp CP5 (Nhiệm vụ E) |
 
 Bốn vai của lab:
 
@@ -79,6 +80,25 @@ Sao chép mục dưới đây cho từng thành viên.
 - `report/team/bang_loi.md`: hai bộ nhãn độc lập, tỉ lệ đồng thuận 20/20 (100%), quy tắc phân biệt và bảng khắc phục 5 ca đủ 5 loại.
 - `report/team/ho_so_launch_v0.md`: Mục 5.
 - Báo cáo cá nhân: `report/team/2A202604072_NguyenKhacBao.md`.
+
+## HoangTheDuyet-2A202603980
+
+### Phần việc phụ trách
+
+- CP5 · Nhiệm vụ E: hoàn thiện `report/team/chi_so.md`, `report/team/ho_so_launch_v0.md`, `report/team/group_report.md`, `report/team/phieu_cham.md` và bổ sung `in_e1_chi_so` trong `src/lab13.py`.
+
+### Đóng góp cụ thể
+
+- Bổ sung hàm `in_e1_chi_so(reqs)` trong `src/lab13.py` tính thử ba chỉ số E1 trên 1.200 yêu cầu: Chính **82,83%** (994/1.200), Dùng bỏ qua gợi ý **27,12%** (48/177), An toàn mở lại 7 ngày **4,25%** (51/1.200).
+- Hoàn thiện `report/team/chi_so.md` (3 chỉ số tính thử + 2 chỉ số tự đề xuất, 10 event có `trace_id`, kiểm tra chéo đo được cho cả 5 chỉ số, 3 dòng rủi ro kinh tế từ `bang_chi_phi.md` có nhãn `simulated`).
+- Hoàn thiện 7 mục trong `report/team/ho_so_launch_v0.md` (giữ nguyên Mục 5 của CP3) với đề xuất **Go có điều kiện** kèm 4 điều kiện có người phụ trách, ngày kiểm tra và các con số bất lợi (xem lại 100% tốn 0,98×–1,03× `simulated`; power ~0,64 ở +5 điểm).
+- Hoàn thiện `report/team/group_report.md` và ghi nhận trạng thái chưa phân cặp duyệt chéo Gate 2a trong `report/team/phieu_cham.md`.
+
+### Bằng chứng
+
+- Commit `6d9153f` ("feat(CP5): chỉ số E1, rủi ro E2, hồ sơ launch v0 và báo cáo nhóm").
+- `src/lab13.py`, `report/team/chi_so.md`, `report/team/ho_so_launch_v0.md`, `report/team/group_report.md`, `report/team/phieu_cham.md`.
+- Báo cáo cá nhân: `report/team/2A202603980_HoangTheDuyet.md`.
 
 ## HoVaTen-MSSV
 

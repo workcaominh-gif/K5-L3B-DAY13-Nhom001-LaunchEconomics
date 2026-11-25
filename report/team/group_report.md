@@ -6,7 +6,7 @@ Báo cáo ngắn, tối đa 2 trang. Số liệu chi tiết nằm trong các fil
 
 - Tên nhóm: Nhom001
 - Lớp: L3B
-- Thành viên: xem `TEAM.md` (4 thành viên, phân vai theo `TEAM.md`)
+- Thành viên: xem `TEAM.md` (5 thành viên, phân vai theo `TEAM.md`)
 
 ## 2. Mục tiêu và cách tiếp cận
 
@@ -27,7 +27,7 @@ Báo cáo ngắn, tối đa 2 trang. Số liệu chi tiết nằm trong các fil
 - Chỉ số trong đợt chạy thử: chính 82,83% (994/1.200), dùng 27,12% (48/177), an toàn 4,25% (51/1.200). Chưa có đối chứng nên không kết luận trợ lý đã nâng chỉ số.
 - Pilot: 20 nhân viên mỗi nhóm, 859 việc/nhóm (299 yêu cầu/người), mde 0,06; nếu tác động thật +5 điểm thì power ≈ 0,64. Ngày quyết định 2027-01-05.
 - Đề xuất cuối trong `ho_so_launch_v0.md`: **Go có điều kiện** (bốn điều kiện về phạm vi, cỡ mẫu, luật dừng và thời gian xem lại).
-- Kết quả duyệt chéo nhóm nhận được từ hội đồng: **chưa có** — `phieu_cham.md` là phiếu nhóm mình chấm nhóm khác, do hội đồng điền tại buổi duyệt, không do AI tạo theo `RULES.md`. Sẽ cập nhật khi nhận được phiếu.
+- Kết quả duyệt chéo nhóm nhận được từ hội đồng: **chưa có** — buổi lab chưa được Labcoach phân cặp duyệt chéo Gate 2a (`phieu_cham.md` giữ biểu mẫu và không tự điền kết quả theo `RULES.md`).
 
 ## 5. Khó khăn và cách xử lý
 
@@ -38,7 +38,7 @@ Báo cáo ngắn, tối đa 2 trang. Số liệu chi tiết nằm trong các fil
 
 ## 6. Tổng hợp đóng góp
 
-Chi tiết đóng góp của từng thành viên nằm trong `TEAM.md` và bốn báo cáo cá nhân `report/team/*_*.md`.
+Chi tiết đóng góp của từng thành viên nằm trong `TEAM.md` và các báo cáo cá nhân `report/team/*_*.md`.
 
 ## 7. Hạn chế và hướng cải thiện
 
