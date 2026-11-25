@@ -281,6 +281,22 @@ def in_d3_ti_le_mo_lai(reqs):
           f'trung bình {so_staff.mean():.1f}, trung vị {so_staff.median():.0f}')
 
 
+# ---------- Nhiệm vụ E · Chỉ số, event và rủi ro ----------
+def in_e1_chi_so(reqs):
+    """E1: tính thử ba chỉ số trên đợt chạy thử (không có nhóm đối chứng).
+    Mọi số in ra đều lấy trực tiếp từ logix_requests.csv, không ước lượng."""
+    print('\nE1 · Ba chỉ số tính thử trên 1.200 yêu cầu')
+    mo_lai = reqs['mo_lai_trong_7_ngay'].astype(int)
+    chinh = ((reqs['dong_trong_24h'].astype(int) == 1) & (mo_lai == 0)).mean()
+    xem = reqs[reqs['duoc_xem_lai'].astype(int) == 1]
+    bo_qua = xem['quyet_dinh_xem_lai'].isin(['sua', 'bo']).mean()
+    an_toan = mo_lai.mean()
+    print(f'Chính  (đóng 24h, không mở lại)={chinh:7.2%} ({int(chinh * len(reqs))}/{len(reqs)})')
+    print(f'Dùng   (sua+bo / được xem lại) ={bo_qua:7.2%} ({int(bo_qua * len(xem))}/{len(xem)})')
+    print(f'An toàn(mở lại trong 7 ngày)   ={an_toan:7.2%} ({int(an_toan * len(reqs))}/{len(reqs)})')
+    print('Chỉ số trong đợt chạy thử; không kết luận trợ lý đã nâng chỉ số (chưa có đối chứng).')
+
+
 if __name__ == '__main__':
     runs = pd.read_csv('logix_runs.csv')
     reqs = pd.read_csv('logix_requests.csv', keep_default_na=False)
@@ -307,3 +323,6 @@ if __name__ == '__main__':
     # TODO CP4 · Nhiệm vụ D: cỡ mẫu.
     in_d1_co_mau()
     in_d3_ti_le_mo_lai(reqs)
+
+    # TODO CP5 · Nhiệm vụ E: ba chỉ số tính thử.
+    in_e1_chi_so(reqs)
