@@ -13,7 +13,7 @@
 | --: | ------ | ---- | ----- | ------ | ------- |
 |   1 | Cao Duy Minh | | | `workcaominh-gif` | Người viết code (CP1) |
 |   2 | Hoàng Nhật Minh | 2A202603992 | | | Người viết code sau giải lao (CP4) |
-|   3 | | | | | Người gắn nhãn 1 |
+|   3 | Nguyễn Khắc Bào | 2A202604072 | baonk.invzble.z@gmail.com | `invzble zone` | Người gắn nhãn 1 (CP3) |
 |   4 | | | | | Người gắn nhãn 2, kiêm giữ hồ sơ |
 
 Bốn vai của lab:
@@ -61,6 +61,24 @@ Sao chép mục dưới đây cho từng thành viên.
 - Commit `668ac05` ("feat(CP4): cỡ mẫu D1 và pilot_plan.yaml").
 - `report/team/pilot_plan.yaml` đọc được bằng `yaml.safe_load`, không còn dấu `?`, không có từ cấm theo RULES.md.
 - Báo cáo cá nhân: `report/team/2A202603992_HoangNhatMinh.md`.
+
+## NguyenKhacBao-2A202604072
+
+### Phần việc phụ trách
+
+- CP3 · Nhiệm vụ C: Người gắn nhãn 1 độc lập 20 ca lỗi theo 5 loại Google PAIR, đối chiếu đồng thuận với Người gắn nhãn 2 (Vũ Văn Trường), chốt quy tắc phân biệt và hoàn thiện bảng khắc phục 5 ca trong `report/team/bang_loi.md`; cập nhật Mục 5 trong `report/team/ho_so_launch_v0.md`.
+
+### Đóng góp cụ thể
+
+- Gắn nhãn độc lập đủ 20 ca lỗi trong `docs/Ngay13_Lab13_De_bai_hoc_vien.docx` theo nguyên nhân gốc; so với bộ nhãn độc lập của Vũ Văn Trường (commit `3141cd7`) đạt đồng thuận **20/20 = 100%** (phân bổ: 4 Do người dùng, 5 Hệ thống, 4 Ngữ cảnh, 4 Giới hạn hệ thống, 3 Ngầm).
+- Rà soát và hoàn thiện các quy tắc phân biệt ca dễ lẫn (ca 6, 8, 9, 12, 13, 15, 18) và chuẩn hoá đủ 5 dòng bảng khắc phục (ca 9, 7, 18, 4, 17) sao cho mỗi dòng đều có cách phát hiện đo được (event/đối soát, ngưỡng, tần suất) gắn `trace_id` và một vai trò phụ trách cụ thể.
+- Cập nhật Mục 5 (*Bảng lỗi và cách khắc phục*) trong `report/team/ho_so_launch_v0.md` với trạng thái `Xong, có bằng chứng` và kiểm tra không dùng từ cấm theo `RULES.md`.
+
+### Bằng chứng
+
+- `report/team/bang_loi.md`: hai bộ nhãn độc lập, tỉ lệ đồng thuận 20/20 (100%), quy tắc phân biệt và bảng khắc phục 5 ca đủ 5 loại.
+- `report/team/ho_so_launch_v0.md`: Mục 5.
+- Báo cáo cá nhân: `report/team/2A202604072_NguyenKhacBao.md`.
 
 ## HoVaTen-MSSV
 
