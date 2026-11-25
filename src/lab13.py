@@ -118,6 +118,78 @@ def in_a4_chi_phi_co_dinh(runs, reqs, chi_phi_co_dinh_thang=40_000_000, khoi_luo
               f"cps+cố định={cps_cong_co_dinh:9,.0f}  so với {BASELINE:,}={cps_cong_co_dinh / BASELINE:5.2f}x")
 
 
+# ---------- Nhiệm vụ D · Cỡ mẫu pilot ----------
+P1, MDE, ALPHA, POWER, ICC = 0.70, 0.05, 0.05, 0.80, 0.02
+
+
+def co_mau(p1, p2, alpha=ALPHA, power=POWER):
+    """Cỡ mẫu mỗi nhóm để so hai tỉ lệ (kiểm định hai phía), z chính xác."""
+    from statistics import NormalDist
+    za, zb = NormalDist().inv_cdf(1 - alpha / 2), NormalDist().inv_cdf(power)
+    pb = (p1 + p2) / 2
+    return math.ceil((za * math.sqrt(2 * pb * (1 - pb))
+                      + zb * math.sqrt(p1 * (1 - p1) + p2 * (1 - p2))) ** 2 / (p2 - p1) ** 2)
+
+
+def he_so_thiet_ke(m, icc=ICC):
+    """DE = 1 + (m - 1) × ICC, m = số yêu cầu mỗi cụm."""
+    return 1 + (m - 1) * icc
+
+
+def m_toi_thieu(n_can, so_cum, icc=ICC):
+    """m nhỏ nhất sao cho so_cum × m / DE(m) ≥ n_can; None nếu vượt giới hạn so_cum / ICC."""
+    mau = so_cum - n_can * icc
+    if mau <= 0:
+        return None
+    return math.ceil(n_can * (1 - icc) / mau)
+
+
+def in_d1_co_mau():
+    print('\nD1 · Cỡ mẫu (baseline 0,70; +5 điểm; alpha 0,05; power 0,8; ICC 0,02)')
+    n5 = co_mau(P1, P1 + MDE)
+    print(f'a) Chia theo yêu cầu: {n5:,} yêu cầu mỗi nhóm')
+
+    m = 75
+    de = he_so_thiet_ke(m)
+    n_cum = math.ceil(n5 * de)
+    nv = math.ceil(n_cum / m)
+    print(f'b) Theo nhân viên, m={m}: DE={de:.2f}, n={n_cum:,} mỗi nhóm → {nv} người/nhóm, '
+          f'tổng {2 * nv} > 40 nhân viên: không đủ người')
+
+    for nhan, c in (('c) 20 nhân viên mỗi nhóm', 20), ('d) 6 depot mỗi nhóm', 6)):
+        tran = c / ICC
+        print(f'{nhan}: n hiệu dụng tối đa = {c}/{ICC} = {tran:,.0f} '
+              f'{"<" if tran < n5 else "≥"} {n5:,} → {"không đạt" if tran < n5 else "đạt"}')
+
+    n6 = co_mau(P1, P1 + 0.06)
+    m6 = m_toi_thieu(n6, 20)
+    print(f'e) Mức chênh 6 điểm: {n6:,} mỗi nhóm; 20 nhân viên cần m ≥ {m6} yêu cầu/người '
+          f'(DE={he_so_thiet_ke(m6):.2f}, tổng {20 * m6:,} yêu cầu/nhóm)')
+
+    # Con số bất lợi: thiết kế cho 6 điểm, nếu tác động thật chỉ 5 điểm thì power còn bao nhiêu?
+    try:
+        from statsmodels.stats.proportion import proportion_effectsize
+        from statsmodels.stats.power import NormalIndPower
+        es = proportion_effectsize(P1 + MDE, P1)
+        pw = NormalIndPower().power(effect_size=es, nobs1=n6, alpha=ALPHA, ratio=1)
+        print(f'   Nếu tác động thật chỉ +5 điểm với n={n6}/nhóm: power ≈ {pw:.2f}')
+    except ImportError:
+        print('   (cài statsmodels để tính power khi tác động thật chỉ +5 điểm)')
+
+
+def in_d3_ti_le_mo_lai(reqs):
+    print('\nD3 · Tỉ lệ hiện tại để đặt luật dừng')
+    pv = reqs[reqs['loai'].isin(['noi_dia', 'hang_nang'])]
+    for nhan, d in (('Toàn mẫu', reqs), ('noi_dia + hang_nang', pv)):
+        mo_lai = d['mo_lai_trong_7_ngay'].astype(int)
+        chinh = ((d['dong_trong_24h'].astype(int) == 1) & (mo_lai == 0)).mean()
+        print(f'{nhan:20s} mở lại 7 ngày={mo_lai.mean():6.2%} ({mo_lai.sum()}/{len(d)})  '
+              f'chỉ số chính (đóng 24h, không mở lại)={chinh:6.2%}')
+    so_staff = reqs.groupby('staff_id').size()
+    print(f'Nhân viên trong mẫu: {so_staff.size}, yêu cầu/người trong 2 tuần: '
+          f'trung bình {so_staff.mean():.1f}, trung vị {so_staff.median():.0f}')
+
+
 if __name__ == '__main__':
     runs = pd.read_csv('logix_runs.csv')
     reqs = pd.read_csv('logix_requests.csv', keep_default_na=False)
@@ -137,5 +209,5 @@ if __name__ == '__main__':
 
     # TODO CP2 · Nhiệm vụ B: đổi từng yếu tố, ghi vào bảng độ nhạy.
     # TODO CP4 · Nhiệm vụ D: cỡ mẫu.
-    #   from statsmodels.stats.proportion import proportion_effectsize
-    #   from statsmodels.stats.power import NormalIndPower
+    in_d1_co_mau()
+    in_d3_ti_le_mo_lai(reqs)
