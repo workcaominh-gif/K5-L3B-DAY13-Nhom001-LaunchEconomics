@@ -5,7 +5,7 @@
 - Tên nhóm: Nhom001
 - Lớp: L3B
 - Repo nhóm: `K5-L3B-DAY13-Nhom001-LaunchEconomics`
-- URL repo, nhánh nộp, commit chốt: https://github.com/workcaominh-gif/K5-L3B-DAY13-Nhom001-LaunchEconomics · nhánh `main` · commit chốt điền trước khi nộp
+- URL repo, nhánh nộp, commit chốt: https://github.com/workcaominh-gif/K5-L3B-DAY13-Nhom001-LaunchEconomics · nhánh `main` · commit chốt = HEAD của `main` lúc nộp (`git log -1 --format=%h`)
 
 ## Thành viên
 
