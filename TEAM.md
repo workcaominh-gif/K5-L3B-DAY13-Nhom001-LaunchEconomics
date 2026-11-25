@@ -11,11 +11,11 @@
 
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
-|   1 | Cao Duy Minh | 2A202603988 | | `workcaominh-gif` | Người viết code (CP1) |
-|   2 | Hoàng Nhật Minh | 2A202603992 | | | Người viết code sau giải lao (CP4) |
+|   1 | Cao Duy Minh | 2A202603988 | cduyminh@gmail.com | `workcaominh-gif` | Người viết code (CP1) |
+|   2 | Hoàng Nhật Minh | 2A202603992 | minh40009@gmail.com | | Người viết code sau giải lao (CP4) |
 |   3 | Nguyễn Khắc Bào | 2A202604072 | baonk.invzble.z@gmail.com | `invzble zone` | Người gắn nhãn 1 (CP3) |
 |   4 | Vũ Văn Trường | 2A202603910 | tini.vu.0@gmail.com | `Sz3RO` | Người kiểm số (CP2), Người gắn nhãn 2 (CP3) |
-|   5 | Hoàng Thế Duyệt | 2A202603980 | | `theduythg` | Người giữ hồ sơ & tổng hợp CP5 (Nhiệm vụ E) |
+|   5 | Hoàng Thế Duyệt | 2A202603980 | theduyethg05@gmail.com | `theduythg` | Người giữ hồ sơ & tổng hợp CP5 (Nhiệm vụ E) |
 
 Bốn vai của lab:
 
@@ -37,6 +37,27 @@ report/team/MSSV_HoTen.md
 Ví dụ: `report/team/20241234_NguyenVanAn.md`.
 
 Sao chép mục dưới đây cho từng thành viên.
+
+## CaoDuyMinh-2A202603988
+
+### Phần việc phụ trách
+
+- CP1 · Nhiệm vụ A (Người viết code): xây dựng mô hình chi phí mỗi việc thành công từ trace trong `src/lab13.py`, điền bảng A1–A4 trong `report/team/bang_chi_phi.md`; fork repo và dựng `TEAM.md` ban đầu.
+
+### Đóng góp cụ thể
+
+- Viết ba hàm A1 (`so_lan_chay_ky_vong`, `ti_le_thanh_cong`, `he_so_chi_phi_moi_viec_thanh_cong`); cả ba phép thử đáp án biết trước đạt 1,20 · 1,25 · 1,25.
+- Viết `mo_hinh(runs, reqs, ...)` (A2): cộng token + tool trên **mọi lần chạy kể cả lỗi**, cộng tiền xem lại/làm lại từ hai cột `_simulated`, chia cho số yêu cầu `ket_qua == 'thanh_cong'`; giữ sẵn tham số giá/hệ số/`max_lan_chay` để CP2 gọi lại.
+- Viết `in_bang_a3` (A3: tách theo 4 loại yêu cầu) và `in_a4_chi_phi_co_dinh` (A4: cộng 40 triệu đ/tháng cho `noi_dia` + `hang_nang` ở hai mức khối lượng 45.000 và một nửa).
+- Đối chiếu số in ra với hướng dẫn: A2 cps = 4.472 đ, A3 đủ 4 dòng theo loại, A4 = 4.599 đ và 5.784 đ — khớp đáp án, sai số 0%.
+- Điền bảng A1–A4 vào `report/team/bang_chi_phi.md`, gắn nhãn `simulated` ở dòng tính từ phút xem lại/làm lại.
+
+### Bằng chứng
+
+- Commit `ee8749b` — "feat(CP1): mô hình chi phí mỗi việc thành công (A1-A4)" (2026-11-25 14:51:55), tác giả `cduyminh <cduyminh@gmail.com>`.
+- Commit `5b314b3` — "docs: báo cáo cá nhân Cao Duy Minh (CP1)" (2026-11-25 14:56:18).
+- `src/lab13.py`: `python lab13.py` in `Ba phép thử đáp án biết trước: ĐẠT`; `report/team/bang_chi_phi.md` mục A1–A4.
+- Báo cáo cá nhân: `report/team/2A202603988_CaoDuyMinh.md`.
 
 ## HoangNhatMinh-2A202603992
 
@@ -60,6 +81,7 @@ Sao chép mục dưới đây cho từng thành viên.
 ### Bằng chứng
 
 - Commit `668ac05` ("feat(CP4): cỡ mẫu D1 và pilot_plan.yaml").
+- Commit `8cd0ca7` ("HoangNhatMinh report") — thêm báo cáo cá nhân và cập nhật TEAM.md.
 - `report/team/pilot_plan.yaml` đọc được bằng `yaml.safe_load`, không còn dấu `?`, không có từ cấm theo RULES.md.
 - Báo cáo cá nhân: `report/team/2A202603992_HoangNhatMinh.md`.
 
@@ -77,6 +99,8 @@ Sao chép mục dưới đây cho từng thành viên.
 
 ### Bằng chứng
 
+- Commit `d2f3c58` — "feat(CP3): hoàn thiện bảng lỗi, bảng khắc phục 5 ca và mục 5 hồ sơ" (2026-11-25 16:31:57).
+- Commit `15f757a` — "docs: báo cáo cá nhân Nguyễn Khắc Bào (CP3) và cập nhật TEAM.md" (2026-11-25 16:31:58).
 - `report/team/bang_loi.md`: hai bộ nhãn độc lập, tỉ lệ đồng thuận 20/20 (100%), quy tắc phân biệt và bảng khắc phục 5 ca đủ 5 loại.
 - `report/team/ho_so_launch_v0.md`: Mục 5.
 - Báo cáo cá nhân: `report/team/2A202604072_NguyenKhacBao.md`.
@@ -97,6 +121,8 @@ Sao chép mục dưới đây cho từng thành viên.
 ### Bằng chứng
 
 - Commit `6d9153f` ("feat(CP5): chỉ số E1, rủi ro E2, hồ sơ launch v0 và báo cáo nhóm").
+- Commit `f01dfa4` ("docs(CP5): cập nhật TEAM.md, báo cáo cá nhân Hoàng Thế Duyệt và phiếu chấm") — tác giả `HoangDuyet2005 <theduyethg05@gmail.com>`.
+- Commit `bbe9528` ("docs: hoàn tất thông tin nộp trong TEAM.md").
 - `src/lab13.py`, `report/team/chi_so.md`, `report/team/ho_so_launch_v0.md`, `report/team/group_report.md`, `report/team/phieu_cham.md`.
 - Báo cáo cá nhân: `report/team/2A202603980_HoangTheDuyet.md`.
 
@@ -121,6 +147,7 @@ Sao chép mục dưới đây cho từng thành viên.
 - Commit `c1d9d15` — "feat(CP2): bảng độ nhạy B1-B4" (2026-11-25 15:17:48).
 - Commit `3141cd7` — "docs(CP3): gắn nhãn độc lập người 2 cho 20 ca lỗi" (2026-11-25 16:22:17).
 - Commit `bfc91d6` — "docs: báo cáo cá nhân Vũ Văn Trường (CP2)" (2026-11-25 15:57:33).
+- Commit `10aba67` — "docs(TEAM): bổ sung đóng góp cụ thể của Vũ Văn Trường (CP2, CP3)" (2026-11-25 23:44:19).
 - `src/lab13.py`, `report/team/bang_chi_phi.md` (mục B1–B4), `report/team/bang_loi.md`.
 - Báo cáo cá nhân: `report/team/2A202603910_VuVanTruong.md`.
 
