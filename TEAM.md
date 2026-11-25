@@ -100,6 +100,30 @@ Sao chép mục dưới đây cho từng thành viên.
 - `src/lab13.py`, `report/team/chi_so.md`, `report/team/ho_so_launch_v0.md`, `report/team/group_report.md`, `report/team/phieu_cham.md`.
 - Báo cáo cá nhân: `report/team/2A202603980_HoangTheDuyet.md`.
 
+## VuVanTruong-2A202603910
+
+### Phần việc phụ trách
+
+- CP2 · Nhiệm vụ B (Người kiểm số): dựng bảng độ nhạy B1–B4 trong `src/lab13.py` và `report/team/bang_chi_phi.md`, đối chiếu từng số với hướng dẫn chi tiết.
+- CP3 · Nhiệm vụ C: Người gắn nhãn 2, gắn độc lập 20 ca lỗi theo năm loại Google PAIR (không trao đổi với Người gắn nhãn 1), rồi so nhãn với Nguyễn Khắc Bào.
+
+### Đóng góp cụ thể
+
+- Viết `KICH_BAN_B1` (9 kịch bản, mỗi dòng chỉ đổi một yếu tố) và các hàm `in_b1_do_nhay`, `in_b2_cap`, `in_b3_gioi_han`, `in_b4_xem_lai_tat_ca` trong `src/lab13.py`; mỗi kịch bản là một lần gọi lại `mo_hinh` của CP1.
+- B1: 4.723/4.346 đ (giá token), 6.292/3.562 đ (xem lại), 6.787/3.315 đ (làm lại), 5.506 đ (lương +25%), 4.237/4.111 đ (giới hạn 2/1 lần); tự kiểm tra "giảm một nửa = −½ gấp đôi" đạt.
+- B2: 6.543 đ (+46,3%) đúng bằng tổng hai tác động riêng (+5,6% + 40,7%); xếp hạng 1. số ca làm lại · 2. tỉ lệ xem lại · 3. lương nhân viên.
+- B3: chi phí cả hệ thống 6.901.220 đ ở giới hạn 2 lần (rẻ nhất cho công ty), không trùng với giới hạn cho CPS thấp nhất (1 lần, 4.111 đ), vì đẩy thêm 85 việc sang nhân viên.
+- B4: xem lại 100% `noi_dia` + `hang_nang` cho 11.743 đ = 0,98× (12.415 đ = 1,03× nếu làm lại 15,3 phút/ca) [simulated]; mức hoà vốn ≤ 5,1 phút cho mỗi lần xem lại. Mọi dòng từ cột `_simulated` đều có nhãn `simulated`.
+- CP3: gắn độc lập 20 ca theo nguyên nhân gốc; so với bộ của Người gắn nhãn 1 đạt đồng thuận 20/20 (100%), phân bổ 4 Do người dùng · 5 Hệ thống · 4 Ngữ cảnh · 4 Giới hạn hệ thống · 3 Ngầm.
+
+### Bằng chứng
+
+- Commit `c1d9d15` — "feat(CP2): bảng độ nhạy B1-B4" (2026-11-25 15:17:48).
+- Commit `3141cd7` — "docs(CP3): gắn nhãn độc lập người 2 cho 20 ca lỗi" (2026-11-25 16:22:17).
+- Commit `bfc91d6` — "docs: báo cáo cá nhân Vũ Văn Trường (CP2)" (2026-11-25 15:57:33).
+- `src/lab13.py`, `report/team/bang_chi_phi.md` (mục B1–B4), `report/team/bang_loi.md`.
+- Báo cáo cá nhân: `report/team/2A202603910_VuVanTruong.md`.
+
 ## HoVaTen-MSSV
 
 ### Phần việc phụ trách
